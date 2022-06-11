@@ -4,3 +4,24 @@ Content-Type: application/json
 {
   "name": "훙성"
 }
+###
+
+GET localhost:8080/carts
+
+###
+
+GET localhost:8080/orders
+
+###
+
+POST localhost:8080/orders
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "productAmount": 100,
+  "orderer": {
+    "memberId": 1,
+    "email": "gns@gns.com"
+  }
+}

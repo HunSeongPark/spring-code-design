@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 /**
  * Created by Hunseong on 2022/06/12
  */
+@Table(name = "orders")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity

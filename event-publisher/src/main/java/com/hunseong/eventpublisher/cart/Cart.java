@@ -21,9 +21,9 @@ public class Cart {
     private Long id;
 
     @Column(nullable = false)
-    private String productId;
+    private Long productId;
 
-    public Cart(String productId) {
+    public Cart(Long productId) {
         this.productId = productId;
     }
 }
