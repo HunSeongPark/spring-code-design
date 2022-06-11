@@ -1,22 +1,27 @@
 package com.hunseong.exceptionnvalidation.member.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.*;
 
 /**
  * Created by Hunseong on 2022/06/11
  */
-@RequiredArgsConstructor
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class Member {
 
-    @NotBlank
-    private final String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Email
-    @NotBlank
-    private final String email;
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    public Member(String email) {
+        this.email = email;
+    }
 }
