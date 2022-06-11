@@ -1,0 +1,14 @@
+# c1 : throw COUPON_ALREADY_USE
+GET http://localhost:8080/member?ex=c1
+###
+
+# c2 : throw LOGIN_INPUT_INVALID
+GET http://localhost:8080/member?ex=c2
+###
+
+# c3 : throw RuntimeException
+GET http://localhost:8080/member?ex=c3
+###
+
+# Success
+GET http://localhost:8080/member

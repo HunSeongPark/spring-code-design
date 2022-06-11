@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
     }
 
     // Exception
-    @ExceptionHandler(CustomException.class)
+    @ExceptionHandler(Exception.class)
     protected ResponseEntity<ErrorResponse> handleException(Exception e) {
         final ErrorCode errorCode = ErrorCode.INTERNAL_SERVER_ERROR;
         final ErrorResponse response = ErrorResponse.of(errorCode);
