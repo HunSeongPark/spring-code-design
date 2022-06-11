@@ -2,7 +2,6 @@ package com.hunseong.eventpublisher.member;
 
 import com.hunseong.eventpublisher.EmailSenderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionalEventListener;
 
