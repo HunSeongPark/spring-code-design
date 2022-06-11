@@ -1,56 +1,7 @@
-# c1 : throw COUPON_ALREADY_USE
-GET http://localhost:8080/member?ex=c1
-###
-
-# c2 : throw LOGIN_INPUT_INVALID
-GET http://localhost:8080/member?ex=c2
-###
-
-# c3 : throw RuntimeException
-GET http://localhost:8080/member?ex=c3
-###
-
-# Success
-GET http://localhost:8080/member
-###
-
-# Success
-POST http://localhost:8080/member
+POST http://localhost:8080/members
 Content-Type: application/json
 
 {
-  "name": "hunseong",
-  "email": "hunseong@na.com"
+  "email": "test@test.com"
 }
 ###
-
-# Validation (name)
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": " ",
-  "email": "hunseong@na.com"
-}
-###
-
-# Validation (email)
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "hunseong",
-  "email": "abc"
-}
-###
-
-# Validation (name, email)
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": " ",
-  "email": "asd"
-}
-###
-
