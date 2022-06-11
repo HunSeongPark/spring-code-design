@@ -4,6 +4,7 @@ import com.hunseong.eventpublisher.EmailSenderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.event.TransactionalEventListener;
 
 /**
  * Created by Hunseong on 2022/06/12
@@ -14,7 +15,7 @@ public class MemberEventHandler {
 
     private final EmailSenderService emailSenderService;
 
-    @EventListener
+    @TransactionalEventListener
     public void memberSignUpEventListener(MemberSignUpEvent dto) {
         emailSenderService.sendSignUpEmail(dto.getMember());
     }
