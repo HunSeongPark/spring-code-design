@@ -3,9 +3,9 @@ package com.hunseong.exceptionnvalidation.member.controller;
 import com.hunseong.exceptionnvalidation.exception.CustomException;
 import com.hunseong.exceptionnvalidation.exception.ErrorCode;
 import com.hunseong.exceptionnvalidation.member.domain.Member;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by Hunseong on 2022/06/11
@@ -23,5 +23,10 @@ public class MemberApiController {
             }
         }
         return new Member("hunseong", "hunseong@adf.com");
+    }
+
+    @PostMapping("/member")
+    public Member createMember(@Valid @RequestBody Member member) {
+        return member;
     }
 }
